@@ -15,6 +15,12 @@ app.get("/", (req, res) => {
     `);
 });
 
+app.post("/", (req, res) => {
+  //get access to email/pass/passConfirmation
+
+  res.send("Account Created!!");
+});
+
 app.listen(3000, () => {
   console.log("listening");
 });
