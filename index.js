@@ -16,8 +16,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  //get access to email/pass/passConfirmation
-
+  req.on("data", (data) => {
+    console.log(data);
+  });
   res.send("Account Created!!");
 });
 
