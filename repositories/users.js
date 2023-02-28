@@ -5,3 +5,5 @@ class UsersRepository {
     }
   }
 }
+
+new UsersRepository();
