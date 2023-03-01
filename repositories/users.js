@@ -20,6 +20,13 @@ class UsersRepository {
       })
     );
   }
+  async create(attrs) {
+    //{email: 'email@email.com', password: 'password'}
+    const records = await this.getAll();
+    records.push(attrs);
+    //write updates records array back to users.json (this.filename)
+    await fs.promises.writeFile(this.filename, JSON.stringify(records));
+  }
 }
 
 const test = async () => {
