@@ -20,6 +20,7 @@ class UsersRepository {
     //Read its contents
     console.log(contents);
     //parse contents
+    const data = JSON.parse(contents);
     //return parsed data
   }
 }
