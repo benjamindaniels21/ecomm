@@ -25,6 +25,10 @@ class UsersRepository {
     const records = await this.getAll();
     records.push(attrs);
     //write updates records array back to users.json (this.filename)
+    await this.writeAll(records);
+  }
+
+  async writeAll(records) {
     await fs.promises.writeFile(this.filename, JSON.stringify(records));
   }
 }
