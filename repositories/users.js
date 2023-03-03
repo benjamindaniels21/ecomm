@@ -61,13 +61,15 @@ class UsersRepository {
       throw new Error(`Record with id ${id} not found`); //Error handling if record doesn't exist
     }
 
-    Object.assign(record, attrs);
+    Object.assign(record, attrs); //Take everything from attr and put it in the record
+
+    await this.writeAll(records);
   }
 }
 
 const test = async () => {
   const repo = new UsersRepository("users.json");
-  // await repo.delete("192295b8");
+  await repo.update("108a8dba", { password: "mypassword" });
 };
 
 test();
