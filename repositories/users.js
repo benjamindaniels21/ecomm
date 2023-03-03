@@ -4,15 +4,16 @@ const crypto = require("crypto");
 class UsersRepository {
   constructor(filename) {
     if (!filename) {
-      throw new Error("Creating a repository requires a filename.");
+      throw new Error("Creating a repository requires a filename."); //no filename passed into class
     }
-    this.filename = filename;
+    this.filename = filename; //set up file name
     try {
-      fs.accessSync(this.filename);
+      fs.accessSync(this.filename); //see if file exists
     } catch (err) {
-      fs.writeFileSync(this.filename, "[]");
+      fs.writeFileSync(this.filename, "[]"); //if file doesn't exist CREATE a new file called this.filename with an empty array inside
     }
   }
+
   async getAll() {
     //Open file called this.filename
     return JSON.parse(
@@ -21,6 +22,7 @@ class UsersRepository {
       })
     );
   }
+
   async create(attrs) {
     attrs.id = this.randomId();
     //{email: 'email@email.com', password: 'password'}
