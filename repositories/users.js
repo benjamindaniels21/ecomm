@@ -69,7 +69,7 @@ class UsersRepository {
 
 const test = async () => {
   const repo = new UsersRepository("users.json");
-  await repo.update("108a8dba", { password: "mypassword" });
+  await repo.update("108a8dbadfdfdf", { password: "mypassword" });
 };
 
 test();
