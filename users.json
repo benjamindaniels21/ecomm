@@ -1,5 +1,10 @@
 [
-    {
-        "email": "test@test.com"
-    }
+  {
+    "email": "test@test.com"
+  },
+  {
+    "email": "bjd21@duke.edu",
+    "password": "Frank",
+    "id": "56980c19"
+  }
 ]
