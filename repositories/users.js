@@ -34,14 +34,16 @@ class UsersRepository {
     const buf = await scrypt(attrs.password, salt, 64);
 
     const records = await this.getAll();
-    records.push({
+    const record = {
       ...attrs, //copy all properties off attrs
       password: `${buf.toString("hex")}.${salt}`, //replace password with this
-    });
+    };
+
+    records.push(record);
     //write updates records array back to users.json (this.filename)
     await this.writeAll(records);
 
-    return attrs;
+    return record;
   }
 
   async writeAll(records) {
