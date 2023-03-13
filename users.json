@@ -11,5 +11,10 @@
     "email": "ben@ben.com",
     "password": "Frank",
     "id": "ec55b245"
+  },
+  {
+    "email": "test1@test.com",
+    "password": "4500cd41cdb4d4d81b535f07ad8d60baa61f336a2cbb74029dc1cb6f1357c5d1b3fb84ab3d9740d3a64ef7f65e8937960ed0b30379c060a15036218d1c1d1fdf.5633ec488ef2817d",
+    "id": "f19ebcd4"
   }
 ]
