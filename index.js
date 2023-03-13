@@ -3,6 +3,11 @@ const bodyParser = require("body-parser");
 const usersRepo = require("./repositories/users");
 const cookieSession = require("cookie-session");
 
+// import express from "express";
+// import bodyParser from "body-parser";
+// import usersRepo from "./repositories/users";
+// import cookieSession from "cookie-session";
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true })); //this applies to all parts of our app
 app.use(
