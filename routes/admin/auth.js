@@ -51,7 +51,10 @@ router.post(
   [requireEmailExists, requireValidPasswordForUser],
   async (req, res) => {
     const errors = validationResult(req);
-    console.log(errors);
+
+    if (!errors.isEmpty()) {
+      return res.send(signinTemplate({ errors }));
+    }
 
     const { email } = req.body;
 
