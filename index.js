@@ -5,6 +5,7 @@ const authRouter = require("./routes/admin/auth");
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true })); //this applies to all parts of our app
 
 app.use(
