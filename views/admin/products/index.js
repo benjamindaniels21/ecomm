@@ -1,6 +1,7 @@
 const layout = require("../layout");
 
 module.exports = ({ products }) => {
+  //mapping through array of products
   const renderedProducts = products
     .map((product) => {
       return `
@@ -46,3 +47,5 @@ module.exports = ({ products }) => {
     `,
   });
 };
+
+//bump
