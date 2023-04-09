@@ -45,17 +45,20 @@ module.exports = class Repository {
   }
 
   async getOne(id) {
+    //grab one record
     const records = await this.getAll();
     return records.find((record) => record.id === id);
   }
 
   async delete(id) {
+    //delete one record
     const records = await this.getAll();
     const filteredRecords = records.filter((record) => record.id !== id);
     await this.writeAll(filteredRecords);
   }
 
   async update(id, attrs) {
+    //change one record
     const records = await this.getAll(); //bring in all the records
     const record = records.find((record) => record.id === id); //check to see if the particular record exists
     if (!record) {
@@ -68,6 +71,7 @@ module.exports = class Repository {
   }
 
   async getOneBy(filters) {
+    //filter record
     const records = await this.getAll();
     for (let record of records) {
       let found = true;
